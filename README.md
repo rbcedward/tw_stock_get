@@ -1,6 +1,20 @@
 # PYTHON-台灣及時股價與資料庫串接
 運用台灣證券交易（http://mis.twse.com.tw ） 所提供之API，查詢即時報價，並透過Python與SSMS串接，將資料匯入資料庫中，以便後續分析利用。
-
+```python
+from IPython.display import display, clear_output
+from urllib.request import urlopen
+import numpy as np
+import pandas as pd
+import datetime
+import requests
+import sched
+import time
+import json
+import twstock
+import pyodbc
+import schedule
+import sys
+```
 
 ## 查詢即時股價
 以list的方式產生股票代碼，可支援多檔股票查詢，targets中以台積電（2330）和聯發科（2454）為例，接著產生stock_list為後續API所需的格式，具體格式為，'http://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_2330.tw|tse_2454.tw' ，街個透過json模組將資料讀取。
