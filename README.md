@@ -1,6 +1,6 @@
 # PYTHON-台灣即時股價與資料庫串接
-運用台灣證券交易（http://mis.twse.com.tw ） 所提供之API，查詢即時報價，並透過Python與SSMS串接，將資料匯入資料庫中，以便後續分析利用。
-所需模組與套件：
+運用台灣證券交易（http://mis.twse.com.tw ） 所提供之API，查詢即時報價，並透過Python與SSMS串接，將資料匯入資料庫中，以便後續分析利用。完整程式可參考get_stock_price.ipynb
+首先套件所需模組：
 ```python
 from IPython.display import display, clear_output
 from urllib.request import urlopen
@@ -69,7 +69,7 @@ http://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_2330.tw|tse_2454.tw 
                  })
 ```                 
 
-接著將依些資訊抓取出來，如：時間、股票代碼、公司名稱、現在價格、交易數量、累積數量、開盤價、等資訊。最後將買價、量跟賣價、量第一檔和１並為一個資料。
+接著將依些資訊抓取出來，如：時間、股票代碼、公司名稱、現在價格、交易數量、累積數量、開盤價、等資訊。最後將買價、量跟賣價、量第一檔合併為一個資料集。
 
 ```python
     columns = ['t','c','n','z','tv','v','o','h','l','y']
