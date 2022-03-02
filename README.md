@@ -1,4 +1,4 @@
-# PYTHON-台灣及時股價與資料庫串接
+# PYTHON-台灣即時股價與資料庫串接
 運用台灣證券交易（http://mis.twse.com.tw ） 所提供之API，查詢即時報價，並透過Python與SSMS串接，將資料匯入資料庫中，以便後續分析利用。
 所需模組與套件：
 ```python
